@@ -12,5 +12,5 @@ input[readonly] {
 }
 
 input[type="text"] {
-	text-align: right;
+	text-align: center;
 }

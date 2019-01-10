@@ -1,6 +1,38 @@
 <!doctype html>
 <html>
 <head>
+	<!--WEB APP-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000"/>
+<!--iOS-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta id="status-bar-meta" name="apple-mobile-web-app-status-barstyle" content="default">
+<meta name="apple-mobile-web-app-title" content="Money Exchanger">
+<!--icons-->
+<link rel="apple-touch-icon" href="touch-icons/touch-iconiphone.png">
+<link rel="apple-touch-icon" sizes="152x152" href="touch-icons/touchicon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="touch-icons/touchicon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="touch-icons/touchicon-ipad-retina.png">
+<!--Splash Screens-->
+<link href="splashscreens/iphone5_splash.png" media="(device-width:
+320px) and (device-height: 568px) and (-webkit-device-pixel-ratio:
+2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/iphone6_splash.png" media="(device-width:
+375px) and (device-height: 667px) and (-webkit-device-pixel-ratio:
+2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/iphoneplus_splash.png" media="(devicewidth: 621px) and (device-height: 1104px) and (-webkit-device-pixelratio: 3)" rel="apple-touch-startup-image" />
+<link href="splashscreens/iphonex_splash.png" media="(device-width:
+375px) and (device-height: 812px) and (-webkit-device-pixel-ratio:
+3)" rel="apple-touch-startup-image" />
+<link href="splashscreens/ipad_splash.png" media="(device-width:
+768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio:
+2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/ipadpro1_splash.png" media="(device-width:
+834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio:
+2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/ipadpro2_splash.png" media="(device-width:
+1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio:
+2)" rel="apple-touch-startup-image" />
 <meta charset="UTF-8">
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -60,7 +92,7 @@
 		<option value="BRL">Bulgarian Lev</option>
 		<option value="HUF">Hungarian Forint</option>
 		<option value="DKK">Danish Krone</option>
-		<option value="JPY" selected>Japanese Yen</option>
+		<option value="JPY">Japanese Yen</option>
 		<option value="ILS">Israeli New Shekel</option>
 		<option value="TRY">Turkish lira</option>
 		<option value="RON">Romanian Leu</option>
@@ -85,9 +117,22 @@
 		<option value="SEK">Swedish Krona</option>
 		<option value="CNY">Chinese Yuan</option>
 		<option value="SGD">Singapore Dollar</option>
-		<option value="INR">Indian Rupee</option>
+		<option value="INR" selected>Indian Rupee</option>
 		<option value="IDR">Indonesian Rupiah</option>
 		<option value="RUB">Russian Ruble</option>
 	</select>
+	<script>
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+  		navigator.serviceWorker.register('sw.js').then(function(registration) {
+  		// Registration was successful
+  		console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  	}, function(err) {
+  		// registration failed :(
+  		console.log('ServiceWorker registration failed: ', err);
+  	});
+  });
+}
+</script>
 </body>
 </html>

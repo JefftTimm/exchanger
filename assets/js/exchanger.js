@@ -53,6 +53,8 @@ var Exchanger = {
 		var apiURL = 'https://api.exchangeratesapi.io/latest?base=' + Exchanger.inputCurrency();
 		loadJSON(apiURL, function(data) {
 			Exchanger.Data[Exchanger.inputCurrency()] = data;
+			//Save Data
+			Exchanger.saveData();
 		}, function(xhr) {
 			console.log('Error');
 		});
@@ -70,8 +72,16 @@ var Exchanger = {
 	},
 	saveData: function() {
 		// save Data to localStorage for offline use
+		if(hasLocalStorage()) {
+			localStorage.setItem('RateExchanger', JSON.stringify(Exchanger.Data));
+		}
 	},
 	loadData: function() {
 		// load Data from localStorage
+		if(localStorage.getItem('RateExchanger') !== null){
+			Exchanger.Data = JSON.parse(localStorage.getItem('RateExchanger'));
+		}
 	}
 }
+
+Exchanger.onLoad = Exchanger.loadData();
